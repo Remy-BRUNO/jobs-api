@@ -13,7 +13,7 @@ Check (char_length(password)>=6));
 	job_id SERIAL PRIMARY KEY,
 	company VARCHAR(50) not null,
   position VARCHAR(100) not null,
-  status VARCHAR(255) not null CHECK (status in ('entretion','refusé', 'en attent')) default 'en attente',  
+  status VARCHAR(255) not null CHECK (status in ('entretion','refusé', 'en attente')) default 'en attente',  
   user_id INT REFERENCES users(user_id),
   created_at timestamp with time zone not null default now(),
   updated_at timestamp with time zone not null default now());
